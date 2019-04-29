@@ -6,9 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,900" rel="stylesheet">
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/lightbox.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+            $(function(){
+              // #で始まるリンクをクリックしたら実行されます
+              $('a[href^="#"]').click(function() {
+                // スクロールの速度
+                var speed = 400; // ミリ秒で記述
+                var href= $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top;
+                $('body,html').animate({scrollTop:position}, speed, 'swing');
+                return false;
+              });
+            });
+          </script>
     <title>Shuuun</title>
 </head>
 
@@ -52,7 +67,7 @@
                         </div>
                         <div class="text2">
                             <h4>Profile</h4>
-                            <p>生年月日：1994.5.29<br>広島県 大崎上島町 出身<br>東京都 在住</p>
+                            <p>生年月日：1994.5.29<br>広島県の離島生まれ<br>東京都 在住</p>
                         </div>
                     </div>
                 </div>
